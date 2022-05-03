@@ -16,7 +16,7 @@
         <img [src]="imageUrl" [alt]="title">
         <p>{{ description }}</p>
         <p>
-            <button (click)="onAddSnap()">Oh snap !</button>
+            <button (click)="onToggleSnap()">{{ btnContent }}</button>
             🤌 {{ snaps }}
         </p>
       </div>
