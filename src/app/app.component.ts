@@ -29,9 +29,10 @@ export class AppComponent implements OnInit {
       createdDate: new Date(),
       snaps: 0,
       btnContent: "Oh snaps !",
-      userSnapped: false
+      userSnapped: false,
+      location: "Gotham"
     };
-    
+
     this.myLastSnap = {
       title: 'Un bon repas',
       description: 'Mmmh que c\'est bon !',
