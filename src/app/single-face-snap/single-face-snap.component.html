@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="face-snap-card" [ngClass]="{ snapped : faceSnap.userSnapped }">
+        <h2>{{ faceSnap.title | titlecase }}</h2>
+        <a routerLink="/facesnaps">Retour</a>
+        <p>Mis en ligne le {{ faceSnap.createdDate | date : 'le d MMMM yyyy'}}</p>
+        <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+        <p>{{ faceSnap.description }}</p>
+        <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
+        <p>
+            <button (click)="onToggleSnap()">{{ faceSnap.btnContent }}</button>
+            <span [ngStyle]="{color: 'rgb(0,'+ faceSnap.snaps +', 0)'}">🤌 {{ faceSnap.snaps }}</span>
+        </p>
+    </div>
+</body>
+</html>
